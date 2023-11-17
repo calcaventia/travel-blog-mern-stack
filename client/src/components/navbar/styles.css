@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+.home-title {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+.home-logo-top {
+  width: 80px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+}
