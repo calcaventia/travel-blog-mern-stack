@@ -1,5 +1,8 @@
+import express from "express";
 import PostMessage from "./../modules/postMessage.js";
 import mongoose from "mongoose";
+
+const router = express.Router();
 
 export const getPosts = async (req, res) => {
   try {
@@ -26,7 +29,10 @@ export const getPost = async (req, res) => {
 export const createPost = async (req, res) => {
   const post = req.body;
 
-  const newPost = new PostMessage(post);
+  const newPost = new PostMessage({
+    ...post,
+    createdAt: new Date().toISOString(),
+  });
 
   try {
     await newPost.save();
@@ -70,11 +76,11 @@ export const commentPost = async (req, res) => {
 
 export const deletePost = async (req, res) => {
   const { id } = req.params;
+
   if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send("No post with that id");
+    return res.status(404).send(`No post with id: ${id}`);
 
-  await PostMessage.findByIdAndRemove(id);
-  console / log("DELETE");
+  await PostMessage.findByIdAndDelete(id);
 
-  res.json({ message: "Post deleted successfully" });
+  res.json({ message: "Post deleted successfully." });
 };

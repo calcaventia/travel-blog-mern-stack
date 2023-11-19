@@ -1,18 +1,17 @@
-/* styles.css */
-
 .single-post-container {
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 30px;
   padding: 20px;
   background-color: #f9f9f9;
-  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .single-post-title {
-  font-size: 24px;
+  font-size: 1.8rem;
   margin-bottom: 10px;
   text-align: center;
+  font-family: "Lobster Two", sans-serif;
 }
 
 .content-container {
@@ -25,6 +24,8 @@
 
 .single-post-createdAt {
   font-style: italic;
+  margin-left: 20px;
+  font-size: 13px;
 }
 
 .image-single {
@@ -33,9 +34,42 @@
   max-width: 60%;
   height: auto;
   margin-bottom: 10px;
+  box-shadow: 3px 5px 5px #777775;
+  border-radius: 10px;
 }
 
 .single-post-content {
+  margin-top: 30px;
+  margin-bottom: 20px;
   line-height: 1.6;
-  justify-content: center;
+  text-align: justify;
+  padding: 0 20px 0 20px;
+}
+
+/*Comments styling*/
+.comment-author {
+  margin-bottom: 10px;
+}
+
+.comment-display-box p {
+  margin-top: 20px;
+
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+}
+.comment-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: rgb(247, 220, 69);
+  cursor: pointer;
+  color: #000;
+  box-shadow: 3px 5px 5px #a0a0a0;
+  border: none;
+  border-radius: 20px;
+  padding: 3px 15px 3px 15px;
+}
+
+.comment-box {
+  padding: 0 20px 0 20px;
 }
