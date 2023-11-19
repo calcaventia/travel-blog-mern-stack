@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { commentPost } from "../../actions/posts";
 
@@ -8,10 +8,11 @@ const CommentSection = ({ post }) => {
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    const finalComment = `${comment}`;
+  const handleClick = async () => {
+    const newComments = await dispatch(commentPost(`${comment}`, post._id));
 
-    dispatch(commentPost(finalComment, post._id));
+    setComment("");
+    setComments(newComments);
   };
 
   return (
@@ -30,9 +31,12 @@ const CommentSection = ({ post }) => {
         Submit
       </button>
       <div className="comment-display-box">
-        {comments.map((c, i) => (
-          <p key={i}>{c}</p>
-        ))}
+        {comments
+          ?.slice()
+          .reverse()
+          .map((c, i) => (
+            <p key={i}>{c}</p>
+          ))}
       </div>
     </div>
   );

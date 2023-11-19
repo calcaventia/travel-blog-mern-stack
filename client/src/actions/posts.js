@@ -4,6 +4,7 @@ import {
   CREATE,
   UPDATE,
   DELETE,
+  COMMENT,
 } from "./../constants/actionTypes";
 import * as api from "../api";
 
@@ -46,7 +47,7 @@ export const updatePost = (id, post) => async (dispatch) => {
 export const commentPost = (value, id) => async (dispatch) => {
   try {
     const { data } = await api.comment(value, id);
-    dispatch({ type: "COMMENT", payload: data });
+    dispatch({ type: COMMENT, payload: data });
     return data.comments;
   } catch (error) {
     console.log(error);
@@ -56,9 +57,10 @@ export const commentPost = (value, id) => async (dispatch) => {
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
-
     dispatch({ type: DELETE, payload: id });
   } catch (error) {
-    console.log(error);
+    // Log the error response for further investigation
+    console.error("Delete post error:", error);
+    throw error; // Rethrow the error to propagate it to the caller
   }
 };
