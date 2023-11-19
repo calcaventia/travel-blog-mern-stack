@@ -16,19 +16,13 @@ const postsReducer = (posts = [], action) => {
 
     case CREATE:
       return [...posts, action.payload];
-    case COMMENT: {
-      const updatedPosts = posts.map((post) => {
-        if (post._id === action.payload._id) {
-          return {
-            ...post,
-            comments: [...(post.comments || []), action.payload.comment],
-          };
+    case COMMENT:
+      return posts.map((post) => {
+        if (post._id === +action.payload._id) {
+          return action.payload;
         }
         return post;
       });
-
-      return updatedPosts;
-    }
 
     case UPDATE:
       return posts.map((post) =>

@@ -57,10 +57,9 @@ export const commentPost = (value, id) => async (dispatch) => {
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
+
     dispatch({ type: DELETE, payload: id });
   } catch (error) {
-    // Log the error response for further investigation
-    console.error("Delete post error:", error);
-    throw error; // Rethrow the error to propagate it to the caller
+    console.log(error);
   }
 };

@@ -38,8 +38,9 @@ const PostDetails = () => {
         />
         <p className="single-post-content">{post.message}</p>
       </div>
-
-      <CommentSection post={post} />
+      <div className="comment-box">
+        <CommentSection post={post} />
+      </div>
     </div>
   );
 };

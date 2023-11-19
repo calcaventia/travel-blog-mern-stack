@@ -17,6 +17,14 @@ const Post = ({ post, setCurrentId }) => {
   const navigate = useNavigate();
 
   const openPost = () => navigate(`/posts/${post._id}`);
+  const displayShortContent = (content) => {
+    if (typeof content !== "string") {
+      return ""; // Return an empty string or handle the non-string case
+    }
+    const words = content.split(" ");
+    const truncated = words.slice(0, 20).join(" ");
+    return `${truncated}${words.length > 20 ? "..." : ""}`;
+  };
 
   return (
     <div className="custom-card">
@@ -34,14 +42,14 @@ const Post = ({ post, setCurrentId }) => {
         <div className="details"></div>
         <h5 className="title">{post.title}</h5>
         <div className="content">
-          <p className="message">{post.message}</p>
+          <p className="message">{displayShortContent(post.message)}</p>
         </div>
       </div>
 
       <div className="buttons">
-        <div className="edit-button">
+        <div className="editing-button">
           <button
-            className="icon-button"
+            className="edit-button"
             onClick={() => setCurrentId(post._id)}
           >
             <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />

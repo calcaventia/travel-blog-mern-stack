@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import FileBase from "react-file-base64";
 import "./Form.css";
 import { useDispatch } from "react-redux";
 import { createPost, updatePost } from "../../actions/posts";
@@ -18,6 +18,11 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const dispatch = useDispatch();
 
+  const clear = () => {
+    setCurrentId(0);
+    setPostData({ creator: "", title: "", message: "", selectedFile: "" });
+  };
+
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
@@ -32,14 +37,11 @@ const Form = ({ currentId, setCurrentId }) => {
     clear();
   };
 
-  const clear = () => {
-    setCurrentId(null);
-    setPostData({ creator: "", title: "", message: "", selectedFile: "" });
-  };
-
   return (
     <form className="create-container" onSubmit={handleSubmit}>
-      <h3>{currentId ? "Editing" : "Create"} a Post</h3>
+      <h3 className="form-heading">
+        {currentId ? "Editing" : "Create"} a Post
+      </h3>
       <input
         className="author-input"
         type="creator"
@@ -56,26 +58,25 @@ const Form = ({ currentId, setCurrentId }) => {
         onChange={(e) => setPostData({ ...postData, title: e.target.value })}
       />
       <br />
-      <input
+      <textarea
         className="content-input"
-        type="message"
         placeholder="Content"
         value={postData.message}
         onChange={(e) => setPostData({ ...postData, message: e.target.value })}
-      />
+      ></textarea>
       <br />
-
+      <div>
+        <label htmlFor="file"></label>
+        <FileBase
+          type="file"
+          multiple={false}
+          onDone={({ base64 }) =>
+            setPostData({ ...postData, selectedFile: base64 })
+          }
+        />
+      </div>
       <br />
-      <button className="create-btn" style={{ marginTop: "5px" }}>
-        Submit
-      </button>
-      <button
-        className="clear-btn"
-        style={{ marginTop: "5px" }}
-        onClick={clear}
-      >
-        Clear
-      </button>
+      <button className="create-btn">Submit</button>
     </form>
   );
 };

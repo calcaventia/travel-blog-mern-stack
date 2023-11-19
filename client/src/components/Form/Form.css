@@ -1,23 +1,44 @@
 .create-container {
-  box-shadow: 3px 5px 5px #929292, -3px -5px 5px #a1a1a1;
-  padding: 4%;
-  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4% 0 4% 0;
 }
 
-.author-input {
-  margin-top: 10px;
-}
-
-.title-input {
-  margin-top: 10px;
+.create-container input,
+.create-container textarea,
+.create-container button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .content-input {
-  margin-top: 10px;
-  max-width: 100%;
-  height: 200px;
+  height: 150px; /* Adjust the height as needed */
+  resize: vertical; /* Allow vertical resizing */
+  overflow-y: auto; /* Enable vertical scroll when content exceeds the height */
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .create-btn {
-  display: inline-flex;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgb(247, 220, 69);
+  cursor: pointer;
+  box-shadow: 3px 5px 5px #a0a0a0;
+}
+
+.create-btn:hover {
+  color: #fff;
+  background-color: rgb(20, 20, 20);
+  box-shadow: 3px 5px 5px rgb(247, 220, 69);
 }
