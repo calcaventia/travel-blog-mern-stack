@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5001" });
+const API = axios.create({
+  baseURL: "https://travel-blog-mern-project-327dea0d9220.herokuapp.com/posts",
+});
 
 export const fetchPost = (id) => API.get(`/posts/${id}`);
 export const fetchPosts = () => API.get("/posts/");
