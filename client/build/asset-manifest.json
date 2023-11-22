@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.654d67e4.css",
+    "main.js": "/static/js/main.ba5e7929.js",
+    "static/media/travel_girls4.jpg": "/static/media/travel_girls4.1836885c01f8c9ff649e.jpg",
+    "static/media/travelers.jpg": "/static/media/travelers.d24a817655aa1cddcdee.jpg",
+    "static/media/hiking.jpg": "/static/media/hiking.6fff5d873060858b42e5.jpg",
+    "static/media/travel_pic.jpg": "/static/media/travel_pic.77dad6f8bc249bfd9ae8.jpg",
+    "static/media/girl_roof.jpg": "/static/media/girl_roof.f4eae69489b733a2a18b.jpg",
+    "static/media/plane.jpg": "/static/media/plane.3c019aa37dadad91f0bf.jpg",
+    "static/media/1.png": "/static/media/1.3ac53af9a44c80cfceb8.png",
+    "static/media/3.png": "/static/media/3.49847973c589d3f627c7.png",
+    "static/media/logo2.png": "/static/media/logo2.7bc2f92ffa60e53698c1.png",
+    "static/media/2.png": "/static/media/2.c9291a686760dd367f62.png",
+    "index.html": "/index.html",
+    "main.654d67e4.css.map": "/static/css/main.654d67e4.css.map",
+    "main.ba5e7929.js.map": "/static/js/main.ba5e7929.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.654d67e4.css",
+    "static/js/main.ba5e7929.js"
+  ]
+}
