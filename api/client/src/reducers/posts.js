@@ -5,7 +5,7 @@ import {
   COMMENT,
   UPDATE,
   DELETE,
-} from "./../constants/actionTypes";
+} from "../constants/actionTypes";
 
 const postsReducer = (posts = [], action) => {
   switch (action.type) {

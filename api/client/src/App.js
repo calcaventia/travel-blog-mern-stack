@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import Home from "./components/Home/Home";
-import PostDetails from "./components/PostDetails/PostDetails";
-import Footer from "./components/Footer";
+import Navbar from "./components/navbar/Navbar.js";
+import Home from "./components/Home/Home.js";
+import PostDetails from "./components/PostDetails/PostDetails.js";
+import Footer from "./components/Footer.js";
 import AboutUs from "./components/aboutUs/AboutUs.js";
 
 const App = () => {

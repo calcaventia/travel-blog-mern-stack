@@ -5,7 +5,7 @@ import {
   UPDATE,
   DELETE,
   COMMENT,
-} from "./../constants/actionTypes";
+} from "../constants/actionTypes";
 import * as api from "../api";
 
 export const getPost = (id) => async (dispatch) => {

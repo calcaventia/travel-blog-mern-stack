@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://travel-blog-mern-project-327dea0d9220.herokuapp.com/posts",
+  baseURL: "https://blog-mern-app-3394f30a1d73.herokuapp.com/posts",
 });
 
 export const fetchPost = (id) => API.get(`/posts/${id}`);
