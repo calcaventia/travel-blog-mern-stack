@@ -1,14 +1,12 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "https://travel-blog-mern-project-327dea0d9220.herokuapp.com/posts",
-});
+const url = "http://localhost:5001/posts";
 
-export const fetchPost = (id) => API.get(`/posts/${id}`);
-export const fetchPosts = () => API.get("/posts/");
-export const createPost = (newPost) => API.post("/posts/", newPost);
+export const fetchPost = (id) => axios.get(`${url}/${id}`);
+export const fetchPosts = () => axios.get(url);
+export const createPost = (newPost) => axios.post(url, newPost);
 export const comment = (value, id) =>
-  API.post(`/posts/${id}/commentPost`, { value });
+  axios.post(`${url}/${id}/commentPost`, { value });
 export const updatePost = (id, updatedPost) =>
-  API.patch(`/posts/${id}`, updatedPost);
-export const deletePost = (id) => API.delete(`/posts/${id}`);
+  axios.patch(`${url}/${id}`, updatedPost);
+export const deletePost = (id) => axios.delete(`${url}/${id}`);
