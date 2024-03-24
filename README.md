@@ -96,7 +96,7 @@ List of technologies and frameworks used in the project:
 |   |       postMessage.js
 |   |       
 |   +---node_modules
-|   \---routes
+|   +---routes
 |           posts.js
 |           
 +---client

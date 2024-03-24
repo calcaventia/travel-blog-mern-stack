@@ -7,9 +7,9 @@ import reducers from "./reducers";
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
-  reducer: reducers, // Assuming reducers is an object combining multiple reducers
-  middleware: [thunk], // You can add middleware directly in configureStore
-  devTools: process.env.NODE_ENV !== "production", // Optional: Enable dev tools in non-production environments
+  reducer: reducers,
+  middleware: [thunk],
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 ReactDOM.render(
